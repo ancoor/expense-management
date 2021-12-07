@@ -6,9 +6,9 @@ import ExpensesList from "./ExpensesList";
 import ExpensesChart from "./ExpensesChart"
 
 function Expenses({ expenses }) {
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState(new Date().getFullYear().toString());
   let filteredExpenses = expenses.filter((expense) => {
-    return expense.date.getFullYear().toString() === filteredYear;
+    return new Date(parseInt(expense.date)).getFullYear().toString() === filteredYear;
   });
   const filterHandler = (year) => {
     setFilteredYear(year);

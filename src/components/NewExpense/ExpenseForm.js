@@ -17,24 +17,6 @@ function ExpenseForm(props) {
   today = yyyy + "-" + mm + "-" + dd;
   /* Current Date End */
 
-  // const [title, setTitle ] = useState('');
-  // const [amount, setAmount ] = useState('');
-  // const [date, setDate ] = useState(today);
-
-  // const inputHandler = (event) => {
-  //     if(event.target.name === 'title')
-  //     {
-  //         setTitle(event.target.value);
-  //     }
-  //     else if (event.target.name === 'amount')
-  //     {
-  //         setAmount(event.target.value);
-  //     }
-  //     else
-  //     {
-  //         setDate(event.target.value);
-  //     }
-  // }
   const [expense, setExpense] = useState({
     title: "",
     amount: "",
@@ -55,7 +37,7 @@ function ExpenseForm(props) {
       const expenseData = {
         title: title,
         amount: +amount,
-        date: new Date(date),
+        date: +new Date(date),
       };
       setExpense({
         title: "",

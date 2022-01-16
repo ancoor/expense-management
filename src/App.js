@@ -19,10 +19,8 @@ function App() {
       ...prevExpenses,
     ])
     newExpenses.push(expense);
-    console.log(expenses)
     localStorage.setItem("expenses",JSON.stringify(newExpenses))
   }
-  console.log(expenses)
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
